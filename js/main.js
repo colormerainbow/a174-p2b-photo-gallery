@@ -15,9 +15,9 @@ function init() {
     slide.classList.add("hide", "abs-pos");
   });
   
-  // show the first slide
+  // show the first slide and orientation status
   slides[0].classList.remove("hide");
-  caption.innerHTML = frame.firstElementChild.alt;
+  caption.innerHTML = (frame.firstElementChild.alt) + (slides.length);
   console.log(caption.innerHTML);
   
    next_btn.addEventListener("click",changeSlide);
@@ -41,37 +41,39 @@ function changeSlide(e) {
   
     if(e.target.className == 'next-btn') {
       nextUp = showing.nextElementSibling;
-      caption.innerHTML = showing.nextElementSibling.alt;
-      console.log(caption.innerHTML);
+      //caption.innerHTML = (showing.nextElementSibling.alt) + (slides.length);
+      //console.log('nextbut' + caption.innerHTML);
     }
   
     if(e.target.className == 'back-btn') {
       nextUp = showing.previousElementSibling;
-      caption.innerHTML = showing.previousElementSibling.alt;
-      console.log(caption.innerHTML);
+      //caption.innerHTML = (showing.previousElementSibling.alt) + (slides.length);
+      //console.log('backbtn' + caption.innerHTML);
     }
     
     // deactivate current image
     showing.classList.toggle("hide");
     showing.classList.toggle("current");
     
-    //make sure next image is there
+    //make sure next image is there (going backwards)
     if (!nextUp) {
+        console.log('check if true' + nextUp)
       nextUp = slides[slides.length - 1];
-      caption.innerHTML = nextUp.alt;
-      console.log(nextUp);
+      //caption.innerHTML = nextUp.alt;
+      //console.log('value of nextUp'+ nextUp);
     }
-  
+  //make sure next image is there (going forwards)
     if (nextUp.nodeName !== "IMG") {
+        console.log('nextUp nodeName is' + nextUp.nodeName);
       nextUp = slides[0];
     }
   
     // activate next image
     nextUp.classList.toggle("hide");
     nextUp.classList.toggle("current");
-      //change caption text
-  caption.innerHTML = nextUp.alt;
-  console.log(nextUp.alt);
+      //change caption text for orientation status
+    caption.innerHTML = nextUp.alt + (slides.length);
+    console.log('lastline'+nextUp.alt + (slides.length));
   }
 
 
