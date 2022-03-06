@@ -1,14 +1,17 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     background: #abc;
-    text-align:center;
+    text-align: center;
 }
+
 h1 {
     text-align: center;
     padding: 1rem;
 }
+
 /* temporary banner - remove later
 p {
     border: 2px solid #cab;
@@ -21,56 +24,56 @@ p {
 */
 
 body {
-    text-align:center;
-  }
-  
-  section {
+    text-align: center;
+}
+
+section {
     width: 400px;
     margin: auto;
-  }
-  
-  .frame {
-    position:relative;
-    width:400px;
-    height:300px;
+}
+
+.frame {
+    position: relative;
+    width: 400px;
+    height: 300px;
     margin: 1rem 0;
-  }
-  
-  .slide {
-    display:block;
+}
+
+.slide {
+    display: block;
     margin-bottom: 2rem;
-  }
-  
-  
-  .hide {
+}
+
+
+.hide {
     opacity: 0;
     transition: opacity .5s ease-out;
-  }
-  
-  .current {
-    transition: opacity .5s ease-out;
-  }
-  
-  
-  .spacer {
-    padding: 2rem;
-  }
+}
 
-  .abs-pos {
+.current {
+    transition: opacity .5s ease-out;
+}
+
+.abs-pos {
     position: absolute;
-  }
-  .caption {
+}
+
+.caption {
     position: absolute;
-    z-index: 3; /*make sure it's always visible*/
+    /*make sure it's always visible*/
+    z-index: 3;
     color: #fff;
     bottom: 0;
     width: 100%;
     height: 1rem;
     padding: 1rem 1rem 2rem 1rem;
-  }
-.status {
-  background: rgba(0, 0, 0, .4); /*transparent black*/
 }
+
+.status {
+    background: rgba(0, 0, 0, .4);
+    /*transparent black*/
+}
+
 .controls {
     display: none;
 }
