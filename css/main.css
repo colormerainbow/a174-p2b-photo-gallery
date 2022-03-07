@@ -1,27 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Hubballi&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
+
 body {
     background: #abc;
     text-align: center;
+    font-family: 'Hubballi', cursive;
 }
 
-h1 {
+h1,
+h2 {
     text-align: center;
     padding: 1rem;
+    font-family: 'Cinzel Decorative', cursive;
 }
-
-/* temporary banner - remove later
-p {
-    border: 2px solid #cab;
-    background: #def;
-    text-align: center;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 20px;
-}
-*/
 
 body {
     text-align: center;
