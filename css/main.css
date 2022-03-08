@@ -72,3 +72,36 @@ section {
 .controls {
     display: none;
 }
+
+.drop-list:hover {
+    color: green;
+}
+
+.album-banner .album-list {
+    color: green;
+    /*opacity=1 */
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    position: relative;
+    background: hsla(14, 51%, 75%, .9);
+    list-style: none;
+}
+/*
+.album-list {
+  //  transition: opacity .1s ease-in;
+    opacity: 0; 
+    display: none;
+    list-style: none;
+}
+*/
+
+.album {
+    display: none;
+}
+.selected {
+    display: block;
+}
+
+/* hide album-banner if no js, and set the albums to display in grid with all images showing */
+/* with js turned on, reveal the album-banner */

@@ -2,17 +2,20 @@
 
 let slideShow = null;
 let idleTimer = null;
+const catAlbum = document.querySelector("#cat-album");
+const leavesAlbum = document.querySelector("#leaves-album");
+const wildlifeAlbum = document.querySelector("#wildlife-album");
 
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
     //create shortcut vars
-    const back_btn = document.querySelector(".back-btn");
-    const next_btn = document.querySelector(".next-btn");
-    const frame = document.querySelector(".frame");
-    const slides = frame.querySelectorAll("img");
-    const caption = document.querySelector(".caption");
-    const controls = document.querySelector(".controls");
+    const back_btn = document.querySelector(".selected .back-btn");
+    const next_btn = document.querySelector(".selected .next-btn");
+    const frame = document.querySelector(".selected .frame");
+    const slides = frame.querySelectorAll(".selected img");
+    const caption = document.querySelector(".selected .caption");
+    const controls = document.querySelector(".selected .controls");
 
     //with JS active, collapse images; activate captions & controls 
     slides.forEach((slide) => {
@@ -33,14 +36,40 @@ function init() {
     slideShow = setInterval(advanceSlide, 2000, 'next-btn');
 }
 
+function changeAlbum(e) {
+    const selectedAlbum = document.querySelector(".selected");
+
+    const albumId = e.target.getAttribute("data-album-id");
+
+    selectedAlbum.classList.toggle("selected");
+    const nextAlbum = document.getElementById(albumId);
+    nextAlbum.classList.toggle("selected");
+
+    //stop the auto-play to reset
+    if (slideShow) {
+        clearInterval(slideShow);
+        slideShow = null;
+    }
+    if (idleTimer) {
+        clearTimeout(idleTimer);
+        idleTimer = null;
+    }
+    init();
+}
+
+catAlbum.addEventListener("click", changeAlbum);
+leavesAlbum.addEventListener("click", changeAlbum);
+wildlifeAlbum.addEventListener("click", changeAlbum);
+
+
 //function for advancing slides
 function advanceSlide(direction) {
 
     //shortcut vars
-    const frame = document.querySelector(".frame");
-    const slides = frame.querySelectorAll("img");
-    const caption = document.querySelector(".caption");
-    let showing = document.querySelector(".current");
+    const frame = document.querySelector(".selected .frame");
+    const slides = frame.querySelectorAll(".selected img");
+    const caption = document.querySelector(".selected .caption");
+    let showing = document.querySelector(".selected .current");
     let nextUp = "";
 
     if (direction === 'next-btn') {
@@ -98,7 +127,6 @@ function changeSlide(e) {
     advanceSlide(e.target.className);
 
 }
-
 
 
 /*bonus additional albums up to 10 images with separate controls to select different albums, use same show/hide featuer */

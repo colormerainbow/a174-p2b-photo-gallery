@@ -17,7 +17,7 @@
 
 
 
-    <section>
+    <section id="cat-images" class="album selected">
         <h2>Cats</h2>
 
         <figure class="frame">
@@ -39,6 +39,55 @@
             <a href="#" class="next-btn">Next</a>
         </div>
 
+    </section>
+
+    <section id="leaves-images" class="album">
+        <h2>Leaves</h2>
+
+        <figure class="frame">
+            <img class="slide current" src="images/leaves1.jpg" width="400" height="300" alt="1 of ">
+            <img class="slide" src="images/leaves2.jpg" width="400" height="300" alt="2 of ">
+            <img class="slide" src="images/leaves3.jpg" width="400" height="300" alt="3 of ">
+            <img class="slide" src="images/leaves4.jpg" width="400" height="300" alt="4 of ">
+            <img class="slide" src="images/leaves5.jpeg" width="400" height="300" alt="5 of ">
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <div class="controls">
+            <a href="#" class="back-btn">Back</a>
+            <a href="#" class="next-btn">Next</a>
+        </div>
+
+    </section>
+
+    <section id="wildlife-images" class="album">
+        <h2>Wildlife</h2>
+
+        <figure class="frame">
+            <img class="slide current" src="images/wildlife1.jpg" width="400" height="300" alt="1 of ">
+            <img class="slide" src="images/wildlife2.jpg" width="400" height="300" alt="2 of ">
+            <img class="slide" src="images/wildlife3.jpg" width="400" height="300" alt="3 of ">
+            <img class="slide" src="images/wildlife4.jpg" width="400" height="300" alt="4 of ">
+            <img class="slide" src="images/wildlife5.jpg" width="400" height="300" alt="5 of ">
+            <figcaption class="caption"></figcaption>
+        </figure>
+
+        <div class="controls">
+            <a href="#" class="back-btn">Back</a>
+            <a href="#" class="next-btn">Next</a>
+        </div>
+
+    </section>
+
+    <section class="album-banner">
+        <h2 class="drop-list">Select an Album</h2>
+            <ul class="album-list">
+                <li><button id="cat-album" data-album-id="cat-images">Cats</button></li>
+                <li><button id="leaves-album" data-album-id="leaves-images">Leaves</button></li>
+                <li><button id="wildlife-album" data-album-id="wildlife-images">Wildlife</button></li>
+            </ul>
+    
+    
     </section>
 </body>
 
