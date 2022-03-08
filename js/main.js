@@ -5,8 +5,12 @@ let idleTimer = null;
 const catAlbum = document.querySelector("#cat-album");
 const leavesAlbum = document.querySelector("#leaves-album");
 const wildlifeAlbum = document.querySelector("#wildlife-album");
+const albumBanner = document.querySelector(".album-banner");
 
 document.addEventListener('DOMContentLoaded', init);
+/*with js turned on, reveal the album selector */
+albumBanner.classList.remove("hide");
+
 
 function init() {
     //create shortcut vars
@@ -128,8 +132,6 @@ function changeSlide(e) {
 
 }
 
-
-/*bonus additional albums up to 10 images with separate controls to select different albums, use same show/hide featuer */
 /* leverage domloop exercise to create new albums that have carousel content */
 
 

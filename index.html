@@ -11,10 +11,10 @@
 </head>
 
 <body id="mainbody">
-    <button>Back to Single Album</button>
+    <a class="base-page" href="https://colormerainbow.github.io/a174-p2-photo-gallery/" target="_blank">Back to Single
+            Album</a>
+
     <h1>Photo Gallery</h1>
-
-
 
     <section id="cat-images" class="album selected">
         <h2>Cats</h2>
@@ -78,16 +78,18 @@
 
     </section>
 
-    <section class="album-banner">
+    <!--hide this album selector if js is turned off-->
+    <section class="album-banner hide">
         <h2 class="drop-list">Select an Album</h2>
-            <ul class="album-list">
-                <li><button id="cat-album" data-album-id="cat-images">Cats</button></li>
-                <li><button id="leaves-album" data-album-id="leaves-images">Leaves</button></li>
-                <li><button id="wildlife-album" data-album-id="wildlife-images">Wildlife</button></li>
-            </ul>
-    
-    
+        <ul class="album-list">
+            <li><button id="cat-album" data-album-id="cat-images">Cats</button></li>
+            <li><button id="leaves-album" data-album-id="leaves-images">Leaves</button></li>
+            <li><button id="wildlife-album" data-album-id="wildlife-images">Wildlife</button></li>
+        </ul>
+
+
     </section>
+
 </body>
 
 </html>

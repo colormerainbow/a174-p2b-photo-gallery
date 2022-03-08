@@ -4,9 +4,8 @@
     box-sizing: border-box;
 }
 
-
 body {
-    background: #abc;
+    background: #caf0f8;
     text-align: center;
     font-family: 'Hubballi', cursive;
 }
@@ -18,8 +17,16 @@ h2 {
     font-family: 'Cinzel Decorative', cursive;
 }
 
-body {
-    text-align: center;
+.base-page {
+    border: 1px solid black;
+    padding: .5rem;
+    background: #3d5a80;
+    color: #caf0f8;
+}
+
+button {
+    padding: .6rem;
+    margin-bottom: 1rem;
 }
 
 section {
@@ -31,7 +38,7 @@ section {
     position: relative;
     width: 400px;
     height: 300px;
-    margin: 1rem 0;
+    margin: 1rem 0 2rem 0;
 }
 
 .slide {
@@ -68,8 +75,14 @@ section {
     /*transparent black*/
 }
 
+/* hide the controls when js is turned off */
 .controls {
     display: none;
+}
+
+.album-banner {
+    background: #3d5a80;
+    color: #caf0f8;
 }
 
 .album-list {
@@ -77,16 +90,16 @@ section {
     justify-content: space-evenly;
     padding: 1rem;
     position: relative;
-    background: hsla(14, 51%, 75%, .9);
+    background: #3d5a80;
     list-style: none;
 }
 
+/* hide all albums until selected */
 .album {
     display: none;
 }
+
+/* display the first default album to start */
 .selected {
     display: block;
 }
-
-/* hide album-banner if no js, and set the albums to display in grid with all images showing */
-/* with js turned on, reveal the album-banner */
