@@ -39,7 +39,6 @@ section {
     margin-bottom: 2rem;
 }
 
-
 .hide {
     opacity: 0;
     transition: opacity .5s ease-out;
@@ -73,13 +72,7 @@ section {
     display: none;
 }
 
-.drop-list:hover {
-    color: green;
-}
-
-.album-banner .album-list {
-    color: green;
-    /*opacity=1 */
+.album-list {
     display: flex;
     justify-content: space-evenly;
     padding: 1rem;
@@ -87,14 +80,6 @@ section {
     background: hsla(14, 51%, 75%, .9);
     list-style: none;
 }
-/*
-.album-list {
-  //  transition: opacity .1s ease-in;
-    opacity: 0; 
-    display: none;
-    list-style: none;
-}
-*/
 
 .album {
     display: none;
