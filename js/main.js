@@ -2,9 +2,11 @@
 
 let slideShow = null;
 let idleTimer = null;
+/*
 const catAlbum = document.querySelector("#cat-album");
 const leavesAlbum = document.querySelector("#leaves-album");
 const wildlifeAlbum = document.querySelector("#wildlife-album");
+*/
 const albumBanner = document.querySelector(".album-banner");
 
 document.addEventListener('DOMContentLoaded', init);
@@ -37,7 +39,7 @@ function init() {
     back_btn.addEventListener("click", changeSlide);
 
     // setup autoplay on page load until user clicks
-    slideShow = setInterval(advanceSlide, 2000, 'next-btn');
+    slideShow = setInterval(advanceSlide, 4000, 'next-btn');
 }
 
 function changeAlbum(e) {
@@ -61,9 +63,14 @@ function changeAlbum(e) {
     init();
 }
 
+document.querySelectorAll(".album-list button").forEach((btn) => {
+    btn.addEventListener("click", changeAlbum);
+});
+/*
 catAlbum.addEventListener("click", changeAlbum);
 leavesAlbum.addEventListener("click", changeAlbum);
 wildlifeAlbum.addEventListener("click", changeAlbum);
+*/
 
 
 //function for advancing slides
