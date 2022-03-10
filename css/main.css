@@ -45,7 +45,7 @@ h3 {
 }
 
 .hero h1 {
-    background-color: rgba(44, 26, 8, 0.35);
+    background-color: rgba(228, 220, 212, 0.25);
     font-style: oblique;
 }
 
@@ -56,6 +56,7 @@ h3 {
 
 .showcase {
     background-color: #b7b7b7;
+    margin-top: 4rem;
 }
 
 .album-list {
@@ -139,7 +140,6 @@ section {
 .alb:hover {
     background-color: #0b7a75;
     border: 2px solid #0b7a75;
-
     color: #f0f3f5;
 }
 
@@ -157,7 +157,7 @@ section {
 /*css for the rest of the commercial site - placeholders for more content*/
 .feature-articles {
     position: relative;
-    height: 75vh;
+    height: 100vh;
     width: 100%;
     background: url(../images/lenseye.jpg) fixed;
     background-size: cover;
@@ -174,17 +174,17 @@ section {
 }
 
 /* style overrides for wider screen layouts */
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 700px) {
 
     .stories {
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding-bottom: 5rem;
-    }
+    } 
 }
 
 /* style overrides for wider screen layouts */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
 
     .stories {
         display: grid;
