@@ -39,37 +39,18 @@ h3 {
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url(../images/camera-backgroundspa.jpg);
+    background-image: url(../images/camera-background.jpg);
     background-size: cover;
 }
 
 .hero h1 {
     background-color: rgba(44, 26, 8, 0.35);
-    font-style:oblique;
+    font-style: oblique;
 }
 
-/*    
-.hero::before {
-      content: "";
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      //background-color: rgba(0,0,0,0.65);
-      //background-color: rgba(152, 66, 211, 0.33);
-      background-color: rgba(44, 26, 8, 0.5);
-      //opacity: 0.9;
-    }
-  }
-*/
-/* add a link to jump back to single-album page */
-.base-page {
-    border: 1px solid black;
-    padding: 1rem;
-    margin: 1rem;
-    background: #a24936;
-    color: #caf0f8;
+.feature-articles h2 {
+    background-color: rgba(152, 66, 211, 0.33);
+    font-style: oblique;
 }
 
 .showcase {
@@ -123,7 +104,7 @@ section {
     padding: 1rem 1rem 2rem 1rem;
 }
 
- /*transparent black for orientation status*/
+/*transparent black for orientation status*/
 .status {
     background: rgba(0, 0, 0, .4);
 }
@@ -163,4 +144,46 @@ section {
 /* display the first default album to start */
 .selected {
     display: block;
+}
+
+/*css for the rest of the commercial site - placeholders for more content*/
+
+.feature-articles {
+    position: relative;
+    height: 75vh;
+    width: 100%;
+    background-image: url(../images/lenseye.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #b7b7b7;
+    text-align: center;
+}
+
+.story {
+    background-color: #b7b7b7;
+    color: black;
+}
+
+/* style overrides for wider screen layouts */
+@media screen and (min-width: 650px) {
+
+    .stories {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 5rem;
+    }
+}
+
+
+/* style overrides for wider screen layouts */
+@media screen and (min-width: 900px) {
+
+    .stories {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-bottom: 5rem;
+    }
+
 }

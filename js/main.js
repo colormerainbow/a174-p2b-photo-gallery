@@ -8,12 +8,10 @@ const leavesAlbum = document.querySelector("#leaves-album");
 const wildlifeAlbum = document.querySelector("#wildlife-album");
 */
 const albumBanner = document.querySelector(".album-banner");
-const jumplink = document.querySelector(".base-page");
 
 document.addEventListener('DOMContentLoaded', init);
 /*with js turned on, reveal the album selector */
 albumBanner.classList.remove("hide");
-jumplink.classList.remove("hide");
 
 
 function init() {
