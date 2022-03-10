@@ -57,6 +57,18 @@ h3 {
     background-color: #b7b7b7;
 }
 
+.album-list {
+    display: flex;
+    justify-content: space-evenly;
+    padding: .1rem;
+    position: relative;
+    list-style: none;
+    box-shadow: 0px 5px 5px #555b6e;
+}
+.alb {
+    box-shadow: 0px 5px 5px #555b6e;
+}
+
 button {
     padding: .6rem;
     margin-bottom: 1rem;
@@ -118,20 +130,17 @@ section {
     border: 1px solid black;
     padding: .5rem;
     background-color: black;
+    box-shadow: 0px 5px 5px #555b6e;
     color: #f0f3f5;
 }
 
-.album-list {
-    display: flex;
-    justify-content: space-evenly;
-    padding: .1rem;
-    position: relative;
-    list-style: none;
-}
+
 
 .controls a:hover,
 .alb:hover {
     background-color: #0b7a75;
+    border: 2px solid #0b7a75;
+
     color: #f0f3f5;
 }
 
