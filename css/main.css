@@ -7,33 +7,47 @@
 body {
     text-align: center;
     font-family: 'Hubballi', cursive;
-    background-color: rgba(0,0,0, 0.9);
+    background-color: rgba(29, 26, 26, 0.9);
+}
+
+header {
+    color: #f4f2ed;
 }
 
 h1,
-h2 {
+h2,
+h3 {
     text-align: center;
     padding: 1rem;
     font-family: 'Cinzel Decorative', cursive;
 }
-/*
-.hero { 
-    position: relative; 
-    height: 100vh;
-    width: 100%;
-    background-image: url(../images/camera-background.jpg);
-    background-size: cover;
-    background-color: rgba(44, 26, 8, 0.5);
-}
-*/
 
-.hero { 
-    position: relative; 
+.site-nav a {
+    color: #f4f2ed;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.site-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.hero {
+    position: relative;
     height: 100vh;
     width: 100%;
     background-image: url(../images/camera-backgroundspa.jpg);
     background-size: cover;
 }
+
+.hero h1 {
+    background-color: rgba(44, 26, 8, 0.35);
+    font-style:oblique;
+}
+
 /*    
 .hero::before {
       content: "";
@@ -49,21 +63,19 @@ h2 {
     }
   }
 */
-  /*
-  h1 {
-    position: relative;
-  }
-  */
+/* add a link to jump back to single-album page */
 .base-page {
     border: 1px solid black;
-    padding: .5rem;
-    background: #3d5a80;
+    padding: 1rem;
+    margin: 1rem;
+    background: #a24936;
     color: #caf0f8;
 }
 
 .showcase {
-    background-color: #2a3d45;
+    background-color: #b7b7b7;
 }
+
 button {
     padding: .6rem;
     margin-bottom: 1rem;
@@ -111,9 +123,9 @@ section {
     padding: 1rem 1rem 2rem 1rem;
 }
 
+ /*transparent black for orientation status*/
 .status {
     background: rgba(0, 0, 0, .4);
-    /*transparent black*/
 }
 
 /* hide the controls when js is turned off */
@@ -121,23 +133,31 @@ section {
     display: none;
 }
 
-.album-banner {
-    background: #3d5a80;
-    color: #caf0f8;
+.controls a {
+    border: 1px solid black;
+    padding: .5rem;
+    background-color: black;
+    color: #f0f3f5;
 }
 
 .album-list {
     display: flex;
     justify-content: space-evenly;
-    padding: 1rem;
+    padding: .1rem;
     position: relative;
-    background: #3d5a80;
     list-style: none;
+}
+
+.controls a:hover,
+.alb:hover {
+    background-color: #0b7a75;
+    color: #f0f3f5;
 }
 
 /* hide all albums until selected */
 .album {
     display: none;
+    padding-bottom: 3rem;
 }
 
 /* display the first default album to start */
