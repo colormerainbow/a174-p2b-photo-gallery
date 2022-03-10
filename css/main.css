@@ -39,8 +39,9 @@ h3 {
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url(../images/camera-background.jpg);
+    background: url(../images/camera-background.jpg) fixed;
     background-size: cover;
+    background-position: center;
 }
 
 .hero h1 {
@@ -134,8 +135,6 @@ section {
     color: #f0f3f5;
 }
 
-
-
 .controls a:hover,
 .alb:hover {
     background-color: #0b7a75;
@@ -156,12 +155,11 @@ section {
 }
 
 /*css for the rest of the commercial site - placeholders for more content*/
-
 .feature-articles {
     position: relative;
     height: 75vh;
     width: 100%;
-    background-image: url(../images/lenseye.jpg);
+    background: url(../images/lenseye.jpg) fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -185,7 +183,6 @@ section {
     }
 }
 
-
 /* style overrides for wider screen layouts */
 @media screen and (min-width: 900px) {
 
@@ -194,5 +191,4 @@ section {
         grid-template-columns: 1fr 1fr 1fr;
         padding-bottom: 5rem;
     }
-
 }
