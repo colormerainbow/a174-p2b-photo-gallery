@@ -2,6 +2,7 @@
 
 let slideShow = null;
 let idleTimer = null;
+const slideShowDelay = 4000;
 
 document.addEventListener('DOMContentLoaded', preInit);
 
@@ -53,7 +54,7 @@ function init() {
     back_btn.addEventListener("click", changeSlide);
 
     // setup autoplay on page load or on new album load until user clicks
-    slideShow = setInterval(advanceSlide, 4000, 'next-btn');
+    slideShow = setInterval(advanceSlide, slideShowDelay, 'next-btn');
 }
 
 /* handle a change in the album selected for show */
@@ -140,7 +141,7 @@ function changeSlide(e) {
         clearTimeout(idleTimer);
     }
     idleTimer = setTimeout(() => {
-        slideShow = setInterval(advanceSlide, 2000, 'next-btn');
+        slideShow = setInterval(advanceSlide, slideShowDelay, 'next-btn');
         idleTimer = null;
     }, 10000);
 
