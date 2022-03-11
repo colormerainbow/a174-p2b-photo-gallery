@@ -10,8 +10,12 @@ function preInit() {
     const initialAlbum = document.querySelector(".initial");
     initialAlbum.classList.add("selected");
     /* Listen for user click to change the album */
-    document.querySelectorAll(".album-list button").forEach((btn) => {
+    document.querySelectorAll(".album-list a").forEach((btn) => {
         btn.addEventListener("click", changeAlbum);
+    });
+    document.querySelectorAll(".album").forEach((album) => {
+        album.style.overflowY = "hidden";
+        console.log(album.style);
     });
     init();
 }
@@ -27,7 +31,7 @@ function init() {
     const albums = document.querySelectorAll(".album");
 
     albums.forEach((album) => {
-        if (! album.classList.contains("selected")) {
+        if (!album.classList.contains("selected")) {
             album.classList.add("hide-album");
         }
     });
@@ -54,6 +58,9 @@ function init() {
 
 /* handle a change in the album selected for show */
 function changeAlbum(e) {
+
+    e.preventDefault();
+
     /* create shortcut vars */
     const currentAlbum = document.querySelector(".selected");
     const albumId = e.target.getAttribute("data-album-id");

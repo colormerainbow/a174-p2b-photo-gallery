@@ -14,6 +14,10 @@ header {
     color: #f4f2ed;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3 {
@@ -42,6 +46,7 @@ h3 {
     background: url(../images/camera-background.jpg) fixed;
     background-size: cover;
     background-position: center;
+    overflow-y: scroll;
 }
 
 .hero h1 {
@@ -57,24 +62,35 @@ h3 {
 .showcase {
     background-color: #b7b7b7;
     margin-top: 4rem;
-    overflow-x: scroll;
+}
+
+/* add scroll bar when js is off to allow view of full albums */
+.album {
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .album-list {
     display: flex;
     justify-content: space-evenly;
     padding: .1rem;
+    padding-bottom: 1.5rem;
     position: relative;
     list-style: none;
     box-shadow: 0px 5px 5px #555b6e;
 }
-.alb {
+
+.alb-name {
     box-shadow: 0px 5px 5px #555b6e;
 }
 
-button {
-    padding: .6rem;
-    margin-bottom: 1rem;
+.album-list a {
+    list-style: none;
+    text-decoration: none;
+    padding: .7rem;
+    background-color: #495057;
+    box-shadow: 0px 5px 5px #555b6e;
+    color: #f0f3f5;
     font-family: 'Hubballi', cursive;
 }
 
@@ -94,6 +110,7 @@ section {
     display: block;
     margin-bottom: 2rem;
 }
+
 
 .hide {
     opacity: 0;
@@ -147,10 +164,12 @@ section {
 .album {
     padding-bottom: 3rem;
 }
+
 /* the class for the non-selected albums to hide */
 .hide-album {
     display: none;
 }
+
 /* the class for the selected album to display */
 .selected {
     display: block;
@@ -168,12 +187,19 @@ section {
     justify-content: space-between;
     color: #b7b7b7;
     text-align: center;
-    overflow: scroll;
+    overflow-x: scroll;
 }
 
 .story {
     background-color: #b7b7b7;
     color: black;
+}
+
+.story-frame {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 1rem 0 2rem 0;
 }
 
 /* style overrides for wider screen layouts */
@@ -183,7 +209,7 @@ section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding-bottom: 5rem;
-    } 
+    }
 }
 
 /* style overrides for wider screen layouts */
