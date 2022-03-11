@@ -57,6 +57,7 @@ h3 {
 .showcase {
     background-color: #b7b7b7;
     margin-top: 4rem;
+    overflow-x: scroll;
 }
 
 .album-list {
@@ -118,12 +119,12 @@ section {
     padding: 1rem 1rem 2rem 1rem;
 }
 
-/*transparent black for orientation status*/
+/* a JS applied class for the orientation status background*/
 .status {
     background: rgba(0, 0, 0, .4);
 }
 
-/* hide the controls when js is turned off */
+/* hide the controls when JS is turned off */
 .controls {
     display: none;
 }
@@ -143,13 +144,14 @@ section {
     color: #f0f3f5;
 }
 
-/* hide all albums until selected */
 .album {
-    display: none;
     padding-bottom: 3rem;
 }
-
-/* display the first default album to start */
+/* the class for the non-selected albums to hide */
+.hide-album {
+    display: none;
+}
+/* the class for the selected album to display */
 .selected {
     display: block;
 }
@@ -166,6 +168,7 @@ section {
     justify-content: space-between;
     color: #b7b7b7;
     text-align: center;
+    overflow: scroll;
 }
 
 .story {

@@ -2,26 +2,35 @@
 
 let slideShow = null;
 let idleTimer = null;
-/*
-const catAlbum = document.querySelector("#cat-album");
-const leavesAlbum = document.querySelector("#leaves-album");
-const wildlifeAlbum = document.querySelector("#wildlife-album");
-*/
-const albumBanner = document.querySelector(".album-banner");
 
-document.addEventListener('DOMContentLoaded', init);
-/*with js turned on, reveal the album selector */
-albumBanner.classList.remove("hide");
+document.addEventListener('DOMContentLoaded', preInit);
 
-
+/* first select the initial album */
+function preInit() {
+    const initialAlbum = document.querySelector(".initial");
+    initialAlbum.classList.add("selected");
+    /* Listen for user click to change the album */
+    document.querySelectorAll(".album-list button").forEach((btn) => {
+        btn.addEventListener("click", changeAlbum);
+    });
+    init();
+}
+/* set up the selected album to display single images in a slide-show */
 function init() {
-    //create shortcut vars
+    /*create shortcut vars */
     const back_btn = document.querySelector(".selected .back-btn");
     const next_btn = document.querySelector(".selected .next-btn");
     const frame = document.querySelector(".selected .frame");
     const slides = frame.querySelectorAll(".selected img");
     const caption = document.querySelector(".selected .caption");
     const controls = document.querySelector(".selected .controls");
+    const albums = document.querySelectorAll(".album");
+
+    albums.forEach((album) => {
+        if (! album.classList.contains("selected")) {
+            album.classList.add("hide-album");
+        }
+    });
 
     //with JS active, collapse images; activate captions & controls 
     slides.forEach((slide) => {
@@ -35,23 +44,26 @@ function init() {
     caption.innerHTML = (frame.firstElementChild.alt) + (slides.length);
     console.log(caption.innerHTML);
 
+    //detect when user clicks on next or back button 
     next_btn.addEventListener("click", changeSlide);
     back_btn.addEventListener("click", changeSlide);
 
-    // setup autoplay on page load until user clicks
+    // setup autoplay on page load or on new album load until user clicks
     slideShow = setInterval(advanceSlide, 4000, 'next-btn');
 }
 
+/* handle a change in the album selected for show */
 function changeAlbum(e) {
-    const selectedAlbum = document.querySelector(".selected");
-
+    /* create shortcut vars */
+    const currentAlbum = document.querySelector(".selected");
     const albumId = e.target.getAttribute("data-album-id");
-
-    selectedAlbum.classList.toggle("selected");
     const nextAlbum = document.getElementById(albumId);
+
+    /* switch selected class from current album to the next album */
+    currentAlbum.classList.toggle("selected");
     nextAlbum.classList.toggle("selected");
 
-    //stop the auto-play to reset
+    //stop the auto-play and reset the idle timer
     if (slideShow) {
         clearInterval(slideShow);
         slideShow = null;
@@ -63,20 +75,11 @@ function changeAlbum(e) {
     init();
 }
 
-document.querySelectorAll(".album-list button").forEach((btn) => {
-    btn.addEventListener("click", changeAlbum);
-});
-/*
-catAlbum.addEventListener("click", changeAlbum);
-leavesAlbum.addEventListener("click", changeAlbum);
-wildlifeAlbum.addEventListener("click", changeAlbum);
-*/
 
-
-//function for advancing slides
+/* advance the slide image in the direction requested */
 function advanceSlide(direction) {
 
-    //shortcut vars
+    /* create shortcut vars */
     const frame = document.querySelector(".selected .frame");
     const slides = frame.querySelectorAll(".selected img");
     const caption = document.querySelector(".selected .caption");
@@ -113,7 +116,7 @@ function advanceSlide(direction) {
 
 }
 
-/* call this function each time the user clicks on Next or Back */
+/* function to handle the change of the slide image*/
 function changeSlide(e) {
 
     // stop link from trying to reload page
@@ -139,10 +142,4 @@ function changeSlide(e) {
 
 }
 
-/* leverage domloop exercise to create new albums that have carousel content */
-
-
 /*bonus add nav dots allowing for direct access to any slide */
-
-
-/*bonus consider making next and back buttons into arrows */
