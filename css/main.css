@@ -155,7 +155,7 @@ section {
 }
 
 .controls a:hover,
-.alb:hover {
+.alb-name:hover {
     background-color: #0b7a75;
     border: 2px solid #0b7a75;
     color: #f0f3f5;
