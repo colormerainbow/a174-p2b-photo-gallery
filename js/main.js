@@ -68,8 +68,8 @@ function changeAlbum(e) {
     const nextAlbum = document.getElementById(albumId);
 
     /* switch selected class from current album to the next album */
-    currentAlbum.classList.toggle("selected");
-    nextAlbum.classList.toggle("selected");
+    currentAlbum.classList.remove("selected");
+    nextAlbum.classList.add("selected");
 
     //stop the auto-play and reset the idle timer
     if (slideShow) {
@@ -89,7 +89,9 @@ function advanceSlide(direction) {
 
     /* create shortcut vars */
     const frame = document.querySelector(".selected .frame");
+    console.log(frame);
     const slides = frame.querySelectorAll(".selected img");
+
     const caption = document.querySelector(".selected .caption");
     let showing = document.querySelector(".selected .current");
     let nextUp = "";
@@ -103,8 +105,8 @@ function advanceSlide(direction) {
     }
 
     // deactivate current image
-    showing.classList.toggle("hide");
-    showing.classList.toggle("current");
+    showing.classList.add("hide");
+    showing.classList.remove("current");
 
     //make sure next image is there (going backwards)
     if (!nextUp) {
@@ -116,8 +118,8 @@ function advanceSlide(direction) {
     }
 
     // activate next image
-    nextUp.classList.toggle("hide");
-    nextUp.classList.toggle("current");
+    nextUp.classList.remove("hide");
+    nextUp.classList.add("current");
     //change caption text for orientation status
     caption.innerHTML = nextUp.alt + (slides.length);
     console.log(nextUp.alt + (slides.length));
