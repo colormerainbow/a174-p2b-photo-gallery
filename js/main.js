@@ -14,13 +14,13 @@ function preInit() {
     document.querySelectorAll(".album-list a").forEach((btn) => {
         btn.addEventListener("click", changeAlbum);
     });
+    /* remove the scroll bar from each alum when js is on */
     document.querySelectorAll(".album").forEach((album) => {
         album.style.overflowY = "hidden";
-        console.log(album.style);
     });
     init();
 }
-/* set up the selected album to display single images in a slide-show */
+/* With JS on, set up the selected album to display single images in a slide-show */
 function init() {
     /*create shortcut vars */
     const back_btn = document.querySelector(".selected .back-btn");
@@ -31,20 +31,21 @@ function init() {
     const controls = document.querySelector(".selected .controls");
     const albums = document.querySelectorAll(".album");
 
+    /* hide the albums which are not selected */
     albums.forEach((album) => {
         if (!album.classList.contains("selected")) {
             album.classList.add("hide-album");
         }
     });
 
-    //with JS active, collapse images; activate captions & controls 
+    /* collapse images; activate captions & controls */
     slides.forEach((slide) => {
         slide.classList.add("hide", "abs-pos");
     });
     caption.classList.add("status");
     controls.style.display = "block";
 
-    // show the first slide and orientation status
+    // show the first slide and its orientation status
     slides[0].classList.remove("hide");
     caption.innerHTML = (frame.firstElementChild.alt) + (slides.length);
     console.log(caption.innerHTML);
